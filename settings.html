@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Settings – TVK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      width: 100%;
+      min-height: 100vh;
+      min-width: 100vw;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(140deg, #232946 0%, #1e1b19 100%);
+      scroll-behavior: smooth;
+    }
+    @media (min-width: 768px) {
+      body { display: none; }
+      body::before {
+        content: "📵 This app is only accessible on mobile devices.";
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        color: red;
+        margin-top: 40px;
+        padding: 10px;
+      }
+    }
+    .glass {
+      background: rgba(40, 20, 25, 0.92);
+      box-shadow: 0 8px 32px 0 rgba(220, 38, 38, 0.16);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 22px;
+      border: 1.5px solid rgba(255,255,255,0.08);
+    }
+    .fixed-menu {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(40, 20, 25, 0.98);
+      border-top: 1px solid #333;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10px 0 4px 0;
+      z-index: 30;
+    }
+    .fixed-menu a {
+      color: #facc15;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      padding: 0 4px;
+      transition: color 0.18s;
+    }
+    .fixed-menu a:hover {
+      color: #fff200;
+    }
+    .input-label {
+      color: #fde68a;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+      display: block;
+      margin-top: 12px;
+      margin-left: 1px;
+    }
+    .settings-section-title {
+      color: #f87171;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 5px;
+      letter-spacing: 0.03em;
+      margin-top: 12px;
+    }
+    .logout-btn {
+      background: #e11d48;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 15px;
+      width: 100%;
+      margin-top: 28px;
+      padding: 12px 0;
+      font-size: 17px;
+      box-shadow: 0 4px 24px rgba(220,38,38,0.13), 0 1.5px 4px rgba(0,0,0,.13);
+      border: none;
+      transition: background 0.17s;
+    }
+    .logout-btn:hover {
+      background: #be123c;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between items-center">
+
+  <!-- Header at Top -->
+  <header class="w-full max-w-sm flex flex-col items-center pt-4 pb-1 mb-2">
+    <div class="flex items-center justify-center w-full">
+      <img src="logo.png" alt="TVK Logo" class="w-11 h-11 rounded-full shadow-lg border-2 border-red-500 bg-white object-cover mr-3">
+      <div>
+        <span class="text-2xl font-bold text-red-400 tracking-wider" style="font-family:'Montserrat',sans-serif;">TVK</span>
+        <div class="text-[12px] text-yellow-300 font-semibold tracking-wide">Threat Vigilance Keeper</div>
+      </div>
+      <span class="bg-yellow-300 text-gray-900 rounded-xl px-2 py-1 text-xs shadow font-bold ml-auto" style="margin-left:auto;">v1.0</span>
+    </div>
+  </header>
+
+  <!-- Settings Card -->
+  <main class="flex-grow flex flex-col items-center justify-center w-full">
+    <div class="glass w-[93vw] max-w-sm px-6 pt-7 pb-7 flex flex-col items-center mx-auto">
+      <!-- India Flag SVG -->
+      <div class="mb-3">
+        <svg width="52" height="33" viewBox="0 0 56 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto rounded shadow">
+          <rect width="56" height="36" rx="5" fill="#fff"/>
+          <rect y="0" width="56" height="12" fill="#FF9933" rx="5"/>
+          <rect y="24" width="56" height="12" fill="#138808" rx="5"/>
+          <circle cx="28" cy="18" r="6" stroke="#000088" stroke-width="1.5" fill="white"/>
+          <g>
+            <circle cx="28" cy="18" r="1.2" fill="#000088"/>
+            <g stroke="#000088" stroke-width="0.6">
+              <line x1="28" y1="12.5" x2="28" y2="23.5"/>
+              <line x1="22.5" y1="18" x2="33.5" y2="18"/>
+              <line x1="31.85" y1="13.15" x2="24.15" y2="22.85"/>
+              <line x1="24.15" y1="13.15" x2="31.85" y2="22.85"/>
+              <line x1="30.53" y1="14.08" x2="25.47" y2="21.92"/>
+              <line x1="25.47" y1="14.08" x2="30.53" y2="21.92"/>
+              <line x1="32.41" y1="15.47" x2="23.59" y2="20.53"/>
+              <line x1="23.59" y1="15.47" x2="32.41" y2="20.53"/>
+              <line x1="33.36" y1="17.44" x2="22.64" y2="18.56"/>
+              <line x1="22.64" y1="17.44" x2="33.36" y2="18.56"/>
+              <line x1="32.41" y1="20.53" x2="23.59" y2="15.47"/>
+              <line x1="23.59" y1="20.53" x2="32.41" y2="15.47"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <h2 class="text-2xl font-bold text-yellow-300 text-center mb-1" style="font-family:'Montserrat',sans-serif;">Settings</h2>
+
+      <!-- Trusted Contact Section -->
+      <div class="settings-section-title">Trusted Contact Details</div>
+      <form class="w-full space-y-1" id="trustedContactForm" onsubmit="saveContact(event)">
+        <label class="input-label" for="trustedName">Name</label>
+        <input type="text" id="trustedName" name="trustedName" required class="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-yellow-200" placeholder="Trusted Person's Name" />
+
+        <label class="input-label" for="trustedPhone">Phone Number</label>
+        <input type="tel" id="trustedPhone" name="trustedPhone" required class="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-yellow-200" placeholder="Trusted Phone Number" />
+
+        <label class="input-label" for="trustedEmail">Email ID</label>
+        <input type="email" id="trustedEmail" name="trustedEmail" required class="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-yellow-200" placeholder="Trusted Email" />
+
+        <button type="submit"
+                class="w-full bg-yellow-300 hover:bg-yellow-400 active:bg-yellow-500 text-gray-900 rounded-xl font-bold text-lg py-3 mt-4 transition duration-200 shadow-lg">
+          Save Trusted Contact
+        </button>
+      </form>
+
+      <!-- Logout Button -->
+      <button class="logout-btn" onclick="logoutUser()">Logout</button>
+    </div>
+  </main>
+
+  <!-- Footer at Bottom -->
+  <footer class="w-full max-w-sm mx-auto text-center text-xs text-yellow-300 mt-5 mb-14 opacity-90 font-semibold" style="font-family: Montserrat,sans-serif;">
+    &copy; 2024 TVK – Threat Vigilance Keeper.<br>All rights reserved.
+  </footer>
+
+  <!-- Bottom Menu (Sticky/Fixed) -->
+  <nav class="fixed-menu">
+    <a href="settings.html" style="color:#fff200;">Settings</a>
+   
+  </nav>
+
+  <script>
+    // Simulate saving trusted contact
+    function saveContact(e) {
+      e.preventDefault();
+      const name = document.getElementById('trustedName').value.trim();
+      const phone = document.getElementById('trustedPhone').value.trim();
+      const email = document.getElementById('trustedEmail').value.trim();
+      // Save to localStorage (simulate backend)
+      localStorage.setItem('trustedContact', JSON.stringify({name, phone, email}));
+      alert('✅ Trusted contact saved!');
+    }
+
+    // Populate form from storage on load (simulate persistence)
+    window.onload = function() {
+      const data = localStorage.getItem('trustedContact');
+      if (data) {
+        const c = JSON.parse(data);
+        document.getElementById('trustedName').value = c.name || '';
+        document.getElementById('trustedPhone').value = c.phone || '';
+        document.getElementById('trustedEmail').value = c.email || '';
+      }
+    }
+
+    // Simulate logout
+    function logoutUser() {
+      // Remove auth tokens, etc (simulate)
+      alert("You have been logged out!");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>

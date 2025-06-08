@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Report Threat – TVK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      width: 100%;
+      min-height: 100vh;
+      min-width: 100vw;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(140deg, #232946 0%, #1e1b19 100%);
+      scroll-behavior: smooth;
+    }
+    @media (min-width: 768px) {
+      body { display: none; }
+      body::before {
+        content: "📵 This app is only accessible on mobile devices.";
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        color: red;
+        margin-top: 40px;
+        padding: 10px;
+      }
+    }
+    .glass {
+      background: rgba(40, 20, 25, 0.92);
+      box-shadow: 0 8px 32px 0 rgba(220, 38, 38, 0.16);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 22px;
+      border: 1.5px solid rgba(255,255,255,0.08);
+    }
+    .fixed-menu {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(40, 20, 25, 0.98);
+      border-top: 1px solid #333;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10px 0 4px 0;
+      z-index: 30;
+    }
+    .fixed-menu a {
+      color: #facc15;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      padding: 0 4px;
+      transition: color 0.18s;
+    }
+    .fixed-menu a:hover {
+      color: #fff200;
+    }
+    .input-label {
+      color: #fde68a;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+      display: block;
+      margin-top: 12px;
+      margin-left: 1px;
+    }
+    .rt-section-title {
+      color: #f87171;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 5px;
+      letter-spacing: 0.03em;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between items-center">
+
+  <!-- Header at Top -->
+  <header class="w-full max-w-sm flex flex-col items-center pt-4 pb-1 mb-2">
+    <div class="flex items-center justify-center w-full">
+      <img src="logo.png" alt="TVK Logo" class="w-11 h-11 rounded-full shadow-lg border-2 border-red-500 bg-white object-cover mr-3">
+      <div>
+        <span class="text-2xl font-bold text-red-400 tracking-wider" style="font-family:'Montserrat',sans-serif;">TVK</span>
+        <div class="text-[12px] text-yellow-300 font-semibold tracking-wide">Threat Vigilance Keeper</div>
+      </div>
+      <span class="bg-yellow-300 text-gray-900 rounded-xl px-2 py-1 text-xs shadow font-bold ml-auto" style="margin-left:auto;">v1.0</span>
+    </div>
+  </header>
+
+  <!-- Report Threat Card -->
+  <main class="flex-grow flex flex-col items-center justify-center w-full">
+    <div class="glass w-[93vw] max-w-sm px-6 pt-7 pb-7 flex flex-col items-center mx-auto">
+      <!-- India Flag SVG -->
+      <div class="mb-3">
+        <svg width="52" height="33" viewBox="0 0 56 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto rounded shadow">
+          <rect width="56" height="36" rx="5" fill="#fff"/>
+          <rect y="0" width="56" height="12" fill="#FF9933" rx="5"/>
+          <rect y="24" width="56" height="12" fill="#138808" rx="5"/>
+          <circle cx="28" cy="18" r="6" stroke="#000088" stroke-width="1.5" fill="white"/>
+          <g>
+            <circle cx="28" cy="18" r="1.2" fill="#000088"/>
+            <g stroke="#000088" stroke-width="0.6">
+              <line x1="28" y1="12.5" x2="28" y2="23.5"/>
+              <line x1="22.5" y1="18" x2="33.5" y2="18"/>
+              <line x1="31.85" y1="13.15" x2="24.15" y2="22.85"/>
+              <line x1="24.15" y1="13.15" x2="31.85" y2="22.85"/>
+              <line x1="30.53" y1="14.08" x2="25.47" y2="21.92"/>
+              <line x1="25.47" y1="14.08" x2="30.53" y2="21.92"/>
+              <line x1="32.41" y1="15.47" x2="23.59" y2="20.53"/>
+              <line x1="23.59" y1="15.47" x2="32.41" y2="20.53"/>
+              <line x1="33.36" y1="17.44" x2="22.64" y2="18.56"/>
+              <line x1="22.64" y1="17.44" x2="33.36" y2="18.56"/>
+              <line x1="32.41" y1="20.53" x2="23.59" y2="15.47"/>
+              <line x1="23.59" y1="20.53" x2="32.41" y2="15.47"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <h2 class="text-2xl font-bold text-yellow-300 text-center mb-2" style="font-family:'Montserrat',sans-serif;">Report Threat</h2>
+
+      <form class="w-full" id="rtForm" onsubmit="submitRT(event)">
+        <div class="rt-section-title">Threat Details</div>
+        <label class="input-label" for="rtType">Threat Type</label>
+        <select id="rtType" required class="w-full p-3 rounded-lg bg-gray-800 text-yellow-200">
+          <option value="">Select Type</option>
+          <option>Phishing</option>
+          <option>Scam Call/SMS</option>
+          <option>Hacking Attempt</option>
+          <option>Stalking/Harassment</option>
+          <option>Other</option>
+        </select>
+
+        <label class="input-label" for="rtDesc">Description</label>
+        <textarea id="rtDesc" required class="w-full p-3 rounded-lg bg-gray-800 text-yellow-200" placeholder="Describe the threat or suspicious activity"></textarea>
+
+        <label class="input-label" for="rtScreenshot">Screenshot (optional)</label>
+        <input type="file" id="rtScreenshot" accept="image/*" class="w-full bg-gray-800 text-yellow-200 rounded-lg p-2" />
+
+        <label class="input-label" for="rtLink">Suspicious Link (optional)</label>
+        <input type="text" id="rtLink" class="w-full p-3 rounded-lg bg-gray-800 text-yellow-200" placeholder="Paste suspicious link" />
+
+        <label class="input-label" for="rtLocation">Your Location (optional)</label>
+        <input type="text" id="rtLocation" class="w-full p-3 rounded-lg bg-gray-800 text-yellow-200" placeholder="City / Area (auto or manual)" />
+
+        <label class="input-label" for="rtContact">Your Email / Mobile (auto)</label>
+        <input type="text" id="rtContact" class="w-full p-3 rounded-lg bg-gray-800 text-yellow-200" value="user@email.com" disabled />
+
+        <button type="submit"
+                class="w-full bg-red-600 hover:bg-red-700 active:bg-red-800 text-white rounded-xl font-bold text-lg py-3 mt-5 transition duration-200 shadow-lg">
+          🚨 Submit Report
+        </button>
+      </form>
+      <div id="rtSuccess" style="display:none;" class="w-full text-center text-yellow-300 mt-5 font-bold text-lg">
+        ✅ Thank you! Your report has been submitted.<br>
+        Our team will review and respond if needed.
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer at Bottom -->
+  <footer class="w-full max-w-sm mx-auto text-center text-xs text-yellow-300 mt-5 mb-14 opacity-90 font-semibold" style="font-family: Montserrat,sans-serif;">
+    &copy; 2024 TVK – Threat Vigilance Keeper.<br>All rights reserved.
+  </footer>
+
+  <!-- Bottom Menu (Sticky/Fixed) -->
+  <nav class="fixed-menu">
+    <a href="about.html">About</a>
+    <a href="settings.html">Settings</a>
+    <a href="developers.html">Developers</a>
+    <a href="terms.html">Terms &amp; Privacy</a>
+  </nav>
+
+  <script>
+    function submitRT(e) {
+      e.preventDefault();
+      // You can send the report to backend here!
+      document.getElementById("rtForm").style.display = "none";
+      document.getElementById("rtSuccess").style.display = "block";
+    }
+  </script>
+</body>
+</html>

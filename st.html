@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Safety Tips – TVK</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    html, body {
+      height: 100%;
+      width: 100%;
+      min-height: 100vh;
+      min-width: 100vw;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(140deg, #232946 0%, #1e1b19 100%);
+      scroll-behavior: smooth;
+    }
+    @media (min-width: 768px) {
+      body { display: none; }
+      body::before {
+        content: "📵 This app is only accessible on mobile devices.";
+        display: block;
+        text-align: center;
+        font-size: 18px;
+        color: red;
+        margin-top: 40px;
+        padding: 10px;
+      }
+    }
+    .glass {
+      background: rgba(40, 20, 25, 0.92);
+      box-shadow: 0 8px 32px 0 rgba(220, 38, 38, 0.16);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 22px;
+      border: 1.5px solid rgba(255,255,255,0.08);
+    }
+    .tip-card {
+      background: rgba(255,255,255,0.09);
+      border-radius: 13px;
+      margin-bottom: 13px;
+      padding: 12px 16px;
+      border-left: 4px solid #facc15;
+      box-shadow: 0 1.5px 5px rgba(220,38,38,0.10);
+      transition: background 0.13s;
+    }
+    .tip-card:last-child {
+      margin-bottom: 0;
+    }
+    .tip-title {
+      color: #facc15;
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 2px;
+    }
+    .tip-desc {
+      color: #fffde4;
+      font-size: 14px;
+    }
+    .fixed-menu {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(40, 20, 25, 0.98);
+      border-top: 1px solid #333;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 10px 0 4px 0;
+      z-index: 30;
+    }
+    .fixed-menu a {
+      color: #facc15;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      padding: 0 4px;
+      transition: color 0.18s;
+    }
+    .fixed-menu a:hover {
+      color: #fff200;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between items-center">
+
+  <!-- Header at Top -->
+  <header class="w-full max-w-sm flex flex-col items-center pt-4 pb-1 mb-2">
+    <div class="flex items-center justify-center w-full">
+      <img src="logo.png" alt="TVK Logo" class="w-11 h-11 rounded-full shadow-lg border-2 border-red-500 bg-white object-cover mr-3">
+      <div>
+        <span class="text-2xl font-bold text-red-400 tracking-wider" style="font-family:'Montserrat',sans-serif;">TVK</span>
+        <div class="text-[12px] text-yellow-300 font-semibold tracking-wide">Threat Vigilance Keeper</div>
+      </div>
+      <span class="bg-yellow-300 text-gray-900 rounded-xl px-2 py-1 text-xs shadow font-bold ml-auto" style="margin-left:auto;">v1.0</span>
+    </div>
+  </header>
+
+  <!-- Safety Tips Card -->
+  <main class="flex-grow flex flex-col items-center justify-center w-full">
+    <div class="glass w-[93vw] max-w-sm px-6 pt-7 pb-7 flex flex-col items-center mx-auto">
+      <!-- India Flag SVG -->
+      <div class="mb-3">
+        <svg width="52" height="33" viewBox="0 0 56 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto rounded shadow">
+          <rect width="56" height="36" rx="5" fill="#fff"/>
+          <rect y="0" width="56" height="12" fill="#FF9933" rx="5"/>
+          <rect y="24" width="56" height="12" fill="#138808" rx="5"/>
+          <circle cx="28" cy="18" r="6" stroke="#000088" stroke-width="1.5" fill="white"/>
+          <g>
+            <circle cx="28" cy="18" r="1.2" fill="#000088"/>
+            <g stroke="#000088" stroke-width="0.6">
+              <line x1="28" y1="12.5" x2="28" y2="23.5"/>
+              <line x1="22.5" y1="18" x2="33.5" y2="18"/>
+              <line x1="31.85" y1="13.15" x2="24.15" y2="22.85"/>
+              <line x1="24.15" y1="13.15" x2="31.85" y2="22.85"/>
+              <line x1="30.53" y1="14.08" x2="25.47" y2="21.92"/>
+              <line x1="25.47" y1="14.08" x2="30.53" y2="21.92"/>
+              <line x1="32.41" y1="15.47" x2="23.59" y2="20.53"/>
+              <line x1="23.59" y1="15.47" x2="32.41" y2="20.53"/>
+              <line x1="33.36" y1="17.44" x2="22.64" y2="18.56"/>
+              <line x1="22.64" y1="17.44" x2="33.36" y2="18.56"/>
+              <line x1="32.41" y1="20.53" x2="23.59" y2="15.47"/>
+              <line x1="23.59" y1="20.53" x2="32.41" y2="15.47"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <h2 class="text-2xl font-bold text-yellow-300 text-center mb-4" style="font-family:'Montserrat',sans-serif;">Safety Tips</h2>
+      
+      <!-- Tips List -->
+      <div class="w-full">
+        <div class="tip-card">
+          <div class="tip-title">1. Don’t Share OTPs or Passwords</div>
+          <div class="tip-desc">
+            Never share your OTP or password with anyone—even if they claim to be from your bank, police, or TVK team.
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-title">2. Check Links Before Clicking</div>
+          <div class="tip-desc">
+            Always verify the website address. Phishing sites often look similar to real ones but with small changes.
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-title">3. Update Your Software</div>
+          <div class="tip-desc">
+            Regularly update your phone, apps, and antivirus to protect against new threats.
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-title">4. Don’t Share Personal Info Publicly</div>
+          <div class="tip-desc">
+            Avoid sharing your phone number, address, or other personal info on public forums or unknown websites.
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-title">5. Trust Your Instincts</div>
+          <div class="tip-desc">
+            If something feels odd or suspicious, pause and verify before acting.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer at Bottom -->
+  <footer class="w-full max-w-sm mx-auto text-center text-xs text-yellow-300 mt-5 mb-14 opacity-90 font-semibold" style="font-family: Montserrat,sans-serif;">
+    &copy; 2024 TVK – Threat Vigilance Keeper.<br>All rights reserved.
+  </footer>
+
+  <!-- Bottom Menu (Sticky/Fixed) -->
+  <nav class="fixed-menu">
+    <a href="about.html">About</a>
+    <a href="settings.html">Settings</a>
+    <a href="developers.html">Developers</a>
+    <a href="terms.html">Terms &amp; Privacy</a>
+  </nav>
+</body>
+</html>
