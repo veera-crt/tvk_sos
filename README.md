@@ -1,0 +1,1 @@
+TVK_SOS is a lightweight, responsive, and accessible web-based SOS alert system, designed to help users quickly send alerts or access emergency actions with a single tap or click. Built with a focus on speed, simplicity, and clarity, this app is ideal for public safety, student protection, or social campaigns.
